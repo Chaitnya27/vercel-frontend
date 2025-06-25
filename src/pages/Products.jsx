@@ -29,7 +29,7 @@ const Products = () => {
   try {
     const token = sessionStorage.getItem("token"); // ✅ get the token
 
-    await axios.delete(`http://vercel-backend-obu7.onrender.com/api/products/${id}`, {
+    await axios.delete(`https://vercel-backend-obu7.onrender.com/api/products/${id}`, {
       headers: {
         Authorization: `Bearer ${token}` // ✅ send token in Authorization header
       }

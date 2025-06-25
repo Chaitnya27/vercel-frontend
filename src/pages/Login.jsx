@@ -24,7 +24,7 @@ if (!formData.email || !formData.password) {
   }
   
   try {
-    const res = await axios.post("http://vercel-backend-obu7.onrender.com/api/users/login", formData);
+    const res = await axios.post("https://vercel-backend-obu7.onrender.com/api/users/login", formData);
 
     sessionStorage.setItem("token", res.data.token);
     sessionStorage.setItem("userId", res.data._id);

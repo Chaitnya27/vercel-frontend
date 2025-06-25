@@ -38,7 +38,7 @@ const AddProduct = () => {
   const userId = sessionStorage.getItem("userId");
 
     try {
-      await axios.post("http://vercel-backend-obu7.onrender.com/api/products", { ...formData,user:userId} ,
+      await axios.post("https://vercel-backend-obu7.onrender.com/api/products", { ...formData,user:userId} ,
         {
   headers: {
     Authorization: `Bearer ${token}`,

@@ -34,7 +34,7 @@ const EditProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://vercel-backend-obu7.onrender.com/api/products/${id}`, formData, {
+      await axios.put(`https://vercel-backend-obu7.onrender.com/api/products/${id}`, formData, {
   headers: {
    Authorization: `Bearer ${sessionStorage.getItem("token")}`
 

@@ -7,7 +7,7 @@ const MyOrders = () => {
   useEffect(() => {
     const token = sessionStorage.getItem("token");
 
-    axios.get("http://vercel-backend-obu7.onrender.com/api/orders/my-orders", {
+    axios.get("https://vercel-backend-obu7.onrender.com/api/orders/my-orders", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => setOrders(res.data))
