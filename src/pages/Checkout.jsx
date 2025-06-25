@@ -22,7 +22,7 @@ const Checkout = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/orders", {
+      const res = await axios.post("http://vercel-backend-obu7.onrender.com/api/orders", {
         items: cartItems,
         totalAmount: total,
       }, {

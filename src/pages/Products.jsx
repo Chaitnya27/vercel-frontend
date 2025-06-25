@@ -11,7 +11,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/products?search=${search}`);
+      const res = await axios.get(`http:/vercel-backend-obu7.onrender.com/api/products?search=${search}`);
       setProducts(res.data);
     } catch (err) {
       alert("Failed to fetch products");
@@ -29,7 +29,7 @@ const Products = () => {
   try {
     const token = sessionStorage.getItem("token"); // ✅ get the token
 
-    await axios.delete(`http://localhost:5000/api/products/${id}`, {
+    await axios.delete(`http://vercel-backend-obu7.onrender.com/api/products/${id}`, {
       headers: {
         Authorization: `Bearer ${token}` // ✅ send token in Authorization header
       }

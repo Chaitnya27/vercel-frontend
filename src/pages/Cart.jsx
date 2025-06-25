@@ -28,7 +28,7 @@ const Cart = () => {
 
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/orders",
+      "http://vercel-backend-obu7.onrender.com/api/orders",
       {
         user,
         items: cartItems,

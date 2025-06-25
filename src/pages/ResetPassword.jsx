@@ -14,7 +14,7 @@ const ResetPassword = () => {
       return alert("Password should have minimum 7 character");
     }
     try {
-      await axios.post(`http://localhost:5000/api/users/reset-password/${token}`, {
+      await axios.post(`http://vercel-backend-obu7.onrender.com/api/users/reset-password/${token}`, {
         newPassword,
       });
       alert("✅ Password reset successful! Please login.");
