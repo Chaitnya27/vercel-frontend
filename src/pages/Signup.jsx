@@ -30,7 +30,7 @@ const Signup = () => {
     try {
       const res = await axios.post("https://vercel-backend-obu7.onrender.com/api/users/register", formData);
       sessionStorage.setItem("token", res.data.token);
-      sessionStorage.setItem("userId", res.data.user._id);
+      sessionStorage.setItem("userId", res.data.user.id);
 
       alert("Register  successful");
      navigate("/products")
