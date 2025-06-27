@@ -38,9 +38,10 @@ const ForgotPassword = () => {
       {message && <p className="mt-4 text-green-600">{message}</p>}
       {token && (
         <div className="mt-2 text-sm text-gray-500 break-all">
-          <strong>Simulated Reset URL:</strong><br />
-          http://localhost:5173/reset-password/{token}
-        </div>
+    <strong>Simulated Reset URL:</strong><br />
+      https://vercel-frontend-silk-rho.vercel.app/reset-password/{token}
+      </div>
+
       )}
     </div>
   );
