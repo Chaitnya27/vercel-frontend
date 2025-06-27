@@ -11,7 +11,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`https:/vercel-backend-obu7.onrender.com/api/products?search=${search}`);
+      const res = await axios.get(`https://vercel-backend-obu7.onrender.com/api/products?search=${search}`);
       setProducts(res.data);
     } catch (err) {
       alert("Failed to fetch products");
