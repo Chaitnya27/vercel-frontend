@@ -16,7 +16,7 @@ const EditProduct = () => {
   });
 
   useEffect(() => {
-  axios.get(`http://localhost:5000/api/products/${id}`)
+  axios.get(`http://vercel-backend-obu7.onrender.com/api/products/${id}`)
     .then(res => setFormData(res.data))
     .catch(err => {
       alert("Error loading product");
