@@ -33,7 +33,7 @@ const Signup = () => {
       sessionStorage.setItem("userId", res.data._id);
 
       alert("Register  successful");
-     window.location.href = "/products"; 
+     navigate("/products")
     } catch (err) {
       console.error("SignUp failed", err);
      alert("SignUp failed. Please try again.");
