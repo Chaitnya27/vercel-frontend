@@ -14,7 +14,7 @@ const ForgotPassword = () => {
       const res = await axios.post("https://vercel-backend-obu7.onrender.com/api/users/forgot-password", { email });
       setToken(res.data.token); // Simulate email with token
        setMessage(res.data.message);
-    navigate(`/reset-password/${res.data.token}`);
+    navigate(`/reset-password/${res.data.resetLink.split("/").pop()}`);
 
     } catch (err) {
       console.error(err);
