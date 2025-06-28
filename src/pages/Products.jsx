@@ -45,35 +45,49 @@ const Products = () => {
 
 
   return (
-    <div className="p-4">
-      <input
-        type="text"
-        placeholder="Search by name ,brand or category.."
-        className="mb-4 p-2 border rounded w-full sm:w-1/2"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+  <div className="p-4">
+    <input
+      type="text"
+      placeholder="Search by name, brand or category..."
+      className="mb-4 p-2 border rounded w-full sm:w-1/2"
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+    />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
-        {products.map(product => (
-          <div key={product._id} className="border p-4 rounded shadow relative hover:shadow-2xl hover:shadow-black">
-            <img src={product.image} alt={product.name} className="w-full h-40 object-contain" />
-            <h2 className="font-bold mt-2">{product.name}</h2>
-            <p className="text-sm text-gray-600">{product.brand}</p>
-            <p className="text-green-600 font-semibold">₹{product.price}</p>
-            <p className="text-sm">{product.description}</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {products.map((product) => (
+        <div
+          key={product._id}
+          className="flex flex-col justify-between border p-4 rounded shadow relative hover:shadow-2xl hover:shadow-black min-h-[460px]"
+        >
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-40 object-contain"
+          />
+          <h2 className="font-bold mt-2">{product.name}</h2>
+          <p className="text-sm text-gray-600">{product.brand}</p>
+          <p className="text-green-600 font-semibold">₹{product.price}</p>
+          <p className="text-sm line-clamp-3">{product.description}</p>
 
-            {currentUserId === product.user && (
-              <>
-                <Link to={`/edit/${product._id}`} className="absolute top-2 left-2 bg-white px-2 rounded text-blue-500">
-                  Edit
-                </Link>
-                <button onClick={() => handleDelete(product._id)} className="absolute top-2 right-2 bg-white px-2 rounded text-red-500">
-                  Delete
-                </button>
-              </>
-            )}
+          {currentUserId === product.user && (
+            <>
+              <Link
+                to={`/edit/${product._id}`}
+                className="absolute top-2 left-2 bg-white px-2 rounded text-blue-500"
+              >
+                Edit
+              </Link>
+              <button
+                onClick={() => handleDelete(product._id)}
+                className="absolute top-2 right-2 bg-white px-2 rounded text-red-500"
+              >
+                Delete
+              </button>
+            </>
+          )}
 
+          <div className="mt-auto">
             <button
               onClick={() => addToCart(product)}
               className="mt-3 bg-green-600 w-full py-1 text-white rounded hover:bg-green-700"
@@ -81,10 +95,12 @@ const Products = () => {
               Add to Cart
             </button>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Products;
